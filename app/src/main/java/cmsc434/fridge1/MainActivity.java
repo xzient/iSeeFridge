@@ -1,5 +1,7 @@
 package cmsc434.fridge1;
 
+import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -11,50 +13,90 @@ import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private DrawerLayout mDrawerLayout;
+    private NavigationView mNavigationView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+
         mDrawerLayout = findViewById(R.id.drawer_layout_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
-        NavigationView navigationView = findViewById(R.id.nav_view);
-
 
         setSupportActionBar(toolbar);
-        setTitle("Lauren");
+        //setTitle("Saul"); //This will be changed to current user's name
+
+        mNavigationView = findViewById(R.id.nav_view);
+        mNavigationView.setNavigationItemSelectedListener(this);
 
 
-        navigationView.setNavigationItemSelectedListener(
-                new NavigationView.OnNavigationItemSelectedListener() {
-                    @Override
-                    public boolean onNavigationItemSelected(MenuItem menuItem) {
-                        // set item as selected to persist highlight
-                        if (menuItem != null) {
-                            menuItem.setChecked(true);
-                            // close drawer when item is tapped
-                            mDrawerLayout.closeDrawers();
-                        }
-
-
-                        // Add code here to update the UI based on the item selected
-                        // For example, swap UI fragments here
-
-                        return true;
-                    }
-                });
-
-
+        //In case the app is flipped, to not lose current instance
+        if (savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
+            mNavigationView.setCheckedItem(R.id.nav_home);
+        }
 
     }
 
 
+
+    //Navigator Options
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.nav_home:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
+
+                break;
+            case R.id.nav_notes:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new NotesFragment()).commit();
+
+                break;
+            case R.id.nav_inventory:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new InventoryFragment()).commit();
+
+                break;
+            case R.id.nav_shopping_list:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ShoppingListFragment()).commit();
+
+                break;
+            case R.id.nav_meals:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new MealsFragment()).commit();
+
+                break;
+            case R.id.nav_users:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new UsersFragment()).commit();
+
+                break;
+            case R.id.nav_add_to_inventory:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new AddToInventoryFragment()).commit();
+
+                break;
+            case R.id.nav_user_parameters:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new UserParametersFragment()).commit();
+
+                break;
+            case R.id.nav_settings:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new SettingsFragment()).commit();
+
+                break;
+
+
+        }
+        mDrawerLayout.closeDrawer(GravityCompat.END);
+
+        return true;
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -63,24 +105,33 @@ public class MainActivity extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
+
+    //Top App Bar options
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId())
         {
             case R.id.action_home:
-                Toast.makeText(this, "Home", Toast.LENGTH_SHORT).show();
+
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
+                mNavigationView.setCheckedItem(R.id.nav_home);
                 break;
 
             case R.id.action_user:
-                Toast.makeText(this, "User", Toast.LENGTH_SHORT).show();
+
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new UsersFragment()).commit();
+                mNavigationView.setCheckedItem(R.id.nav_users);
+
                 break;
 
             case R.id.action_add:
-                Toast.makeText(this, "Add", Toast.LENGTH_SHORT).show();
+
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new AddToInventoryFragment()).commit();
+                mNavigationView.setCheckedItem(R.id.nav_add_to_inventory);
                 break;
 
             case R.id.action_menu:
-                Toast.makeText(this, "Menu", Toast.LENGTH_SHORT).show();
+
 
                 mDrawerLayout.openDrawer(Gravity.END);
                 break;
