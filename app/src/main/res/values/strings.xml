@@ -11,6 +11,14 @@
     <string name="nav_user_parameters">User Parameters</string>
     <string name="nav_settings">Settings</string>
 
+     <!--Notes-->
+    <string name="notes_alert">Alerts</string>
+    <string name="notes_notes">Notes</string>
+
+    <string name="notes_add_notes">Add a Note</string>
+
+
+
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
