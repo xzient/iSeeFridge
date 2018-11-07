@@ -1,5 +1,6 @@
 package cmsc434.fridge1;
 
+import java.util.ArrayList;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -8,6 +9,8 @@ import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Spinner;
+import android.widget.ArrayAdapter;
 
 public class ShoppingListFragment extends Fragment {
 
@@ -18,8 +21,6 @@ public class ShoppingListFragment extends Fragment {
         getActivity().setTitle( getString(R.string.nav_shopping_list));
 
         //TO DO
-
-
 
         return view;
     }
