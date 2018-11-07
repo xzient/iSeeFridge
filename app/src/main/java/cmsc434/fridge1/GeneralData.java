@@ -16,7 +16,19 @@ public class GeneralData {
             add("Steve added Heinz Tomato Ketchup to Home Inventory");
             add("Lauren added Milk to Home Inventory");
         }};
-    List<String> alerts = Arrays.asList("Soy Milk will expire soon", "Eggs will expire soon", "You have not checked your inventory in 2 days");
+
+
+    ArrayList<String> alerts = new ArrayList<String>(){
+        {
+            add("Soy Milk will expire soon");
+            add("Eggs will expire soon");
+            add("You have not checked your inventory in 2 days");
+        }};
+
+
+    String currentNote = "";
+    int currentNoteLocation = 0;
+    int alertOrNote = 0; //Alert = 0; Note = 1;
 
 
 

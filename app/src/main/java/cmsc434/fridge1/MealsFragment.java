@@ -15,7 +15,9 @@ public class MealsFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view =  inflater.inflate(R.layout.fragment_meals, container, false);
         getActivity().setTitle( getString(R.string.nav_meals));
-        //TO DO
+
+
+
 
 
 

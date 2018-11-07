@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +18,7 @@ import android.widget.Toast;
 public class AddNoteFragment extends Fragment {
 
     GeneralData generalData = GeneralData.getSingleInstance();
+    private static final String TAG = "AddNoteFragment";
 
     String[] hourSpinnerList = new String[] {
             "12pm","1am", "2am", "3am", "4am", "5am","6am","7am","8am","9am","10am","11am","12pm",
@@ -30,6 +32,8 @@ public class AddNoteFragment extends Fragment {
             ,"30","31","32","33","34","35","36","37","38","39"
             ,"40","41","42","43","44","45","46","47","48","49"
             ,"50","51","52","53","54","55","56","57","58","59"};
+
+
 
     @Nullable
     @Override
@@ -53,7 +57,7 @@ public class AddNoteFragment extends Fragment {
 
 
         button.setOnClickListener(new View.OnClickListener() {
-            FragmentTransaction fr = getFragmentManager().beginTransaction();
+            FragmentManager fr = getFragmentManager();//.beginTransaction();
             @Override
             public void onClick(View view) {
 
@@ -61,7 +65,9 @@ public class AddNoteFragment extends Fragment {
                 generalData.notes.add(0, message.getText().toString());
                 Toast.makeText(getActivity(), "Note added!", Toast.LENGTH_SHORT).show();
 
-                fr.replace(R.id.fragment_container, new HomeFragment()).commit();
+
+                fr.popBackStack();
+                //fr.replace(R.id.fragment_container, new HomeFragment()).addToBackStack(TAG).commit();
 
             }
         });

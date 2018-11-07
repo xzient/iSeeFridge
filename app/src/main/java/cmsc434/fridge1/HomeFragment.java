@@ -16,6 +16,7 @@ import android.widget.ListView;
 public class HomeFragment extends Fragment {
 
     String items[];
+    private static final String TAG = "HomeFragment";
     //NavigationView navigationView = getActivity().findViewById(R.id.nav_view);
 
     @Nullable
@@ -47,35 +48,35 @@ public class HomeFragment extends Fragment {
                 NavigationView navigationView = getActivity().findViewById(R.id.nav_view);
                 switch (i) {
                     case 0: //Notes
-                        fr.replace(R.id.fragment_container, new NotesFragment()).commit();
+                        fr.replace(R.id.fragment_container, new NotesFragment()).addToBackStack(TAG).commit();
                         navigationView.setCheckedItem(R.id.nav_notes);
                         break;
                     case 1://Inventory
-                        fr.replace(R.id.fragment_container, new InventoryFragment()).commit();
+                        fr.replace(R.id.fragment_container, new InventoryFragment()).addToBackStack(TAG).commit();
                         navigationView.setCheckedItem(R.id.nav_inventory);
                         break;
                     case 2://Shopping list
-                        fr.replace(R.id.fragment_container, new ShoppingListFragment()).commit();
+                        fr.replace(R.id.fragment_container, new ShoppingListFragment()).addToBackStack(TAG).commit();
                         navigationView.setCheckedItem(R.id.nav_shopping_list);
                         break;
                     case 3://Meals
-                        fr.replace(R.id.fragment_container, new MealsFragment()).commit();
+                        fr.replace(R.id.fragment_container, new MealsFragment()).addToBackStack(TAG).commit();
                         navigationView.setCheckedItem(R.id.nav_meals);
                         break;
                     case 4://Users
-                        fr.replace(R.id.fragment_container, new UsersFragment()).commit();
+                        fr.replace(R.id.fragment_container, new UsersFragment()).addToBackStack(TAG).commit();
                         navigationView.setCheckedItem(R.id.nav_users);
                         break;
                     case 5://Add to inventory
-                        fr.replace(R.id.fragment_container, new AddToInventoryFragment()).commit();
+                        fr.replace(R.id.fragment_container, new AddToInventoryFragment()).addToBackStack(TAG).commit();
                         navigationView.setCheckedItem(R.id.nav_add_to_inventory);
                         break;
                     case 6://User parameters
-                        fr.replace(R.id.fragment_container, new UserParametersFragment()).commit();
+                        fr.replace(R.id.fragment_container, new UserParametersFragment()).addToBackStack(TAG).commit();
                         navigationView.setCheckedItem(R.id.nav_user_parameters);
                         break;
                     case 7://Settings
-                        fr.replace(R.id.fragment_container, new SettingsFragment()).commit();
+                        fr.replace(R.id.fragment_container, new SettingsFragment()).addToBackStack(TAG).commit();
                         navigationView.setCheckedItem(R.id.nav_settings);
                         break;
                     default:

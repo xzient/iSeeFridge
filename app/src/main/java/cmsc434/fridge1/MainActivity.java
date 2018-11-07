@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     private DrawerLayout mDrawerLayout;
     private NavigationView mNavigationView;
+    private static final String TAG = MainActivity.class.getName();
 
 
     @Override
@@ -55,39 +56,39 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.nav_home:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).addToBackStack(TAG).commit();
 
                 break;
             case R.id.nav_notes:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new NotesFragment()).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new NotesFragment()).addToBackStack(TAG).commit();
 
                 break;
             case R.id.nav_inventory:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new InventoryFragment()).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new InventoryFragment()).addToBackStack(TAG).commit();
 
                 break;
             case R.id.nav_shopping_list:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ShoppingListFragment()).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ShoppingListFragment()).addToBackStack(TAG).commit();
 
                 break;
             case R.id.nav_meals:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new MealsFragment()).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new MealsFragment()).addToBackStack(TAG).commit();
 
                 break;
             case R.id.nav_users:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new UsersFragment()).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new UsersFragment()).addToBackStack(TAG).commit();
 
                 break;
             case R.id.nav_add_to_inventory:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new AddToInventoryFragment()).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new AddToInventoryFragment()).addToBackStack(TAG).commit();
 
                 break;
             case R.id.nav_user_parameters:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new UserParametersFragment()).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new UserParametersFragment()).addToBackStack(TAG).commit();
 
                 break;
             case R.id.nav_settings:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new SettingsFragment()).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new SettingsFragment()).addToBackStack(TAG).commit();
 
                 break;
 
@@ -113,20 +114,20 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         {
             case R.id.action_home:
 
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).addToBackStack(TAG).commit();
                 mNavigationView.setCheckedItem(R.id.nav_home);
                 break;
 
             case R.id.action_user:
 
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new UsersFragment()).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new UsersFragment()).addToBackStack(TAG).commit();
                 mNavigationView.setCheckedItem(R.id.nav_users);
 
                 break;
 
             case R.id.action_add:
 
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new AddToInventoryFragment()).commit();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new AddToInventoryFragment()).addToBackStack(TAG).commit();
                 mNavigationView.setCheckedItem(R.id.nav_add_to_inventory);
                 break;
 

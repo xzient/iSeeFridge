@@ -9,13 +9,17 @@ import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
 public class NotesFragment extends Fragment {
 
     GeneralData generalData = GeneralData.getSingleInstance();
+    private static final String TAG = "NotesFragment";
+
+    ListView listAlert;
+    ListView listNotes;
 
     @Nullable
     @Override
@@ -26,14 +30,14 @@ public class NotesFragment extends Fragment {
 
         //TO DO
 
-        ListView listView1 = view.findViewById(R.id.list_alert_notes);
+        listAlert = view.findViewById(R.id.list_alert_notes);
         ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_expandable_list_item_1, generalData.alerts);
-        listView1.setAdapter(adapter1);
+        listAlert.setAdapter(adapter1);
 
 
-        ListView listView2 = view.findViewById(R.id.list_notes_notes);
+        listNotes = view.findViewById(R.id.list_notes_notes);
         ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_expandable_list_item_1, generalData.notes);
-        listView2.setAdapter(adapter2);
+        listNotes.setAdapter(adapter2);
 
         FloatingActionButton fab = view.findViewById(R.id.fab_notes);
 
@@ -41,14 +45,50 @@ public class NotesFragment extends Fragment {
             FragmentTransaction fr = getFragmentManager().beginTransaction();
             @Override
             public void onClick(View view) {
-                fr.replace(R.id.fragment_container, new AddNoteFragment()).commit();
+                fr.replace(R.id.fragment_container, new AddNoteFragment()).addToBackStack(TAG).commit();
 
+            }
+        });
+
+
+        //Click for Alerts
+        listAlert.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view2, int i, long l) {
+                generalData.currentNoteLocation = i;
+                generalData.currentNote = generalData.alerts.get(i);
+                generalData.alertOrNote = 0;
+
+                FragmentTransaction ft = getFragmentManager().beginTransaction();
+                ft.replace(R.id.fragment_container, new DisplayNoteFragment()).addToBackStack(TAG).commit();
+
+
+
+                return;
+            }
+        });
+
+        listNotes.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view2, int i, long l) {
+                generalData.currentNoteLocation = i;
+                generalData.currentNote = generalData.notes.get(i);
+                generalData.alertOrNote = 1;
+
+                FragmentTransaction ft = getFragmentManager().beginTransaction();
+                ft.replace(R.id.fragment_container, new DisplayNoteFragment()).addToBackStack(TAG).commit();
+
+
+
+                return;
             }
         });
 
 
 
 
+
         return view;
     }
+
 }
