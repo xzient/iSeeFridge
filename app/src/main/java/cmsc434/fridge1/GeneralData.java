@@ -33,7 +33,42 @@ public class GeneralData {
 
 
     //Users by NAME and COLOR
-    public HashMap users = new HashMap<String, String>();
+    public HashMap users = new HashMap<String, String>(){{
+        put("Steve", "green");
+        put("Lauren", "orange");
+        put("Anna", "purple");
+    }};
+
+
+    //Inventory Data
+
+    InventoryItem eggs = new InventoryItem("Eggs", "Dozen", "For Anna");
+    InventoryItem milk = new InventoryItem("Milk", "1qt", "For Lauren");
+    InventoryItem ham = new InventoryItem("Ham", "0.5lb", "For Lauren");
+    InventoryItem chickenBreast = new InventoryItem("Chicken Breast", "1lb", "For Anna");
+    InventoryItem swissCheese = new InventoryItem("Swiss Cheese", "0.25lb", "For Lauren");
+    InventoryItem orangeJuice = new InventoryItem("Orange Juice", "1gal", "For Steve");
+    InventoryItem appleJuice = new InventoryItem("Apple Juice", "1gal", "For Steve");
+    InventoryItem turkey = new InventoryItem("Turkey", "0.5lb", "For Lauren");
+    InventoryItem carrots = new InventoryItem("Carrots", "0.5lb", "For Steve");
+    InventoryItem vegetableStock = new InventoryItem("Vegetable Stock", "1lt", "For Anna");
+    InventoryItem ketchup = new InventoryItem("Heinz Tomato Ketchup", "20oz", "For Steve");
+
+    ArrayList<InventoryItem> inventoryItems = new ArrayList<InventoryItem>(){{
+        add(eggs);
+        add(milk);
+        add(ham);
+        add(chickenBreast);
+        add(swissCheese);
+        add(orangeJuice);
+        add(appleJuice);
+        add(turkey);
+        add(carrots);
+        add(vegetableStock);
+        add(ketchup);
+
+    }};
+
 
     public static GeneralData getSingleInstance() {
         if (singleInstance == null)
@@ -43,9 +78,17 @@ public class GeneralData {
     }
 
 
-
+    /*
     public GeneralData() {
+        //Data for users
         users.put("Steve", "green");
         users.put("Lauren", "orange");
+        users.put("Anna", "purple");
+
+
+        //General data for inventory
     }
+    */
+
+
 }

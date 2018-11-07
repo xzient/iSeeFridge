@@ -3,8 +3,11 @@ package cmsc434.fridge1;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
@@ -15,39 +18,54 @@ import java.util.ArrayList;
 
 public class InventoryFragment extends Fragment {
 
+    private static final String TAG = "InventoryFragment";
+    GeneralData generalData = GeneralData.getSingleInstance();
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_inventory, container, false);
         getActivity().setTitle( getString(R.string.nav_inventory));
 
-        //TO DO
-        ListView listView = (ListView) view.findViewById(R.id.inventoryList);
+        ListView listView = view.findViewById(R.id.inventoryList);
 
-        InventoryItem eggs = new InventoryItem("Eggs", "Dozen", "For Matt");
-        InventoryItem milk = new InventoryItem("Milk", "1qt", "For Matt");
-        InventoryItem ham = new InventoryItem("Ham", "0.5lb", "For Matt");
-        InventoryItem chickenBreast = new InventoryItem("Chicken Breast", "1lb", "For Matt");
-        InventoryItem swissCheese = new InventoryItem("Swiss Cheese", "0.25lb", "For Matt");
-        InventoryItem orangeJuice = new InventoryItem("Orange Juice", "1gal", "For Matt");
-        InventoryItem appleJuice = new InventoryItem("Apple Juice", "1gal", "For Matt");
-        InventoryItem turkey = new InventoryItem("Turkey", "0.5lb", "For Matt");
-        InventoryItem carrots = new InventoryItem("Carrots", "0.5lb", "For Matt");
+        BottomNavigationView bottomNav = view.findViewById(R.id.bottom_navigation_inventory);
 
-        ArrayList<InventoryItem> inventoryItems = new ArrayList<>();
 
-        inventoryItems.add(eggs);
-        inventoryItems.add(milk);
-        inventoryItems.add(ham);
-        inventoryItems.add(chickenBreast);
-        inventoryItems.add(swissCheese);
-        inventoryItems.add(orangeJuice);
-        inventoryItems.add(appleJuice);
-        inventoryItems.add(turkey);
-        inventoryItems.add(carrots);
 
-        InventoryListAdapter adapter = new InventoryListAdapter(getActivity(), R.layout.inventory_adapter_view_layout, inventoryItems);
+        InventoryListAdapter adapter = new InventoryListAdapter(getActivity(), R.layout.inventory_adapter_view_layout, generalData.inventoryItems);
         listView.setAdapter(adapter);
+
+
+
+        //Listener for bottom navigation bar
+        bottomNav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                FragmentTransaction fr = getFragmentManager().beginTransaction();
+                switch (item.getItemId()) {
+                    case R.id.nav_inventory_edit:
+                        fr.replace(R.id.fragment_container, new EditInventoryFragment()).addToBackStack(TAG).commit();
+
+                        break;
+
+                    case R.id.nav_inventory_add:
+                        fr.replace(R.id.fragment_container, new AddToInventoryFragment()).addToBackStack(TAG).commit();
+
+                        break;
+
+                    case R.id.nav_inventory_meals:
+                        fr.replace(R.id.fragment_container, new MealsFragment()).addToBackStack(TAG).commit();
+
+                        break;
+
+
+                }
+                return true;
+            }
+        });
+
+
 
         return view;
     }

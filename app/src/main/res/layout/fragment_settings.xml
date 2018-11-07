@@ -24,19 +24,26 @@
                 android:id="@+id/button3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Languages" />
+                android:text="Language"
+                android:background="@color/colorPrimary"
+                android:layout_marginBottom="5dp"
+                />
 
             <Button
                 android:id="@+id/button4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Fonts and Font Size" />
+                android:text="Fonts and Font Size"
+                android:background="@color/colorPrimary"
+                android:layout_marginBottom="5dp"/>
 
             <Button
                 android:id="@+id/button5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="App Display Color" />
+                android:text="App Display Color"
+                android:background="@color/colorPrimary"
+                android:layout_marginBottom="5dp"/>
 
             <Switch
                 android:id="@+id/switch1"
@@ -87,13 +94,17 @@
                 android:id="@+id/button7"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Alarms and Sounds" />
+                android:text="Alarms and Sounds"
+                android:background="@color/colorPrimary"
+                android:layout_marginBottom="5dp"/>
 
             <Button
                 android:id="@+id/button8"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Notification Settings" />
+                android:text="Notification Settings"
+                android:background="@color/colorPrimary"
+                android:layout_marginBottom="5dp"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -105,14 +116,20 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Fridge Lighting" />
+                    android:text="Fridge Lighting"
+                    android:background="@color/colorPrimary"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginRight="3dp"/>
 
                 <Button
                     android:id="@+id/button2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Freezer Lighting" />
+                    android:text="Freezer Lighting"
+                    android:background="@color/colorPrimary"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginLeft="3dp"/>
             </LinearLayout>
 
             <View
@@ -174,7 +191,9 @@
                 android:id="@+id/button9"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Erase All Data and Factory Reset" />
+                android:text="Erase All Data and Factory Reset"
+                android:background="@color/colorPrimary"
+                android:layout_marginTop="5dp"/>
 
         </LinearLayout>
     </ScrollView>
