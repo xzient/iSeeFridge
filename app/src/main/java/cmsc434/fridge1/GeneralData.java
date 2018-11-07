@@ -42,6 +42,9 @@ public class GeneralData {
 
     //Inventory Data
 
+    String currentInventory = "";
+    int currentInventoryLocation = 0;
+
     InventoryItem eggs = new InventoryItem("Eggs", "Dozen", "For Anna");
     InventoryItem milk = new InventoryItem("Milk", "1qt", "For Lauren");
     InventoryItem ham = new InventoryItem("Ham", "0.5lb", "For Lauren");

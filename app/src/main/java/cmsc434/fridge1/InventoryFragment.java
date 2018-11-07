@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.ArrayAdapter;
 
@@ -27,15 +28,12 @@ public class InventoryFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_inventory, container, false);
         getActivity().setTitle( getString(R.string.nav_inventory));
 
-        ListView listView = view.findViewById(R.id.inventoryList);
+        final ListView inventory = view.findViewById(R.id.inventoryList);
 
         BottomNavigationView bottomNav = view.findViewById(R.id.bottom_navigation_inventory);
 
-
-
         InventoryListAdapter adapter = new InventoryListAdapter(getActivity(), R.layout.inventory_adapter_view_layout, generalData.inventoryItems);
-        listView.setAdapter(adapter);
-
+        inventory.setAdapter(adapter);
 
 
         //Listener for bottom navigation bar
@@ -45,8 +43,21 @@ public class InventoryFragment extends Fragment {
                 FragmentTransaction fr = getFragmentManager().beginTransaction();
                 switch (item.getItemId()) {
                     case R.id.nav_inventory_edit:
-                        fr.replace(R.id.fragment_container, new EditInventoryFragment()).addToBackStack(TAG).commit();
+                        //fr.replace(R.id.fragment_container, new EditInventoryFragment()).addToBackStack(TAG).commit();
+                        inventory.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                            @Override
+                            public void onItemClick(AdapterView<?> adapterView, View view2, int i, long l) {
+                                generalData.currentInventoryLocation = i;
+                                generalData.currentInventory = generalData.inventoryItems.get(i).getNotes();
 
+                                FragmentTransaction ft = getFragmentManager().beginTransaction();
+                                ft.replace(R.id.fragment_container, new DisplayInventoryFragment()).addToBackStack(TAG).commit();
+
+
+
+                                return;
+                            }
+                        });
                         break;
 
                     case R.id.nav_inventory_add:
