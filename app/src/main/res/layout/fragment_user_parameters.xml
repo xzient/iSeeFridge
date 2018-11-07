@@ -9,57 +9,57 @@
         android:layout_marginTop="40dp"
         android:orientation="vertical">
 
-        <TextView
+        <Button
             android:id="@+id/user_user_parameters"
-            android:text="Current User: Lauren"
+            android:text="Change User"
             android:layout_gravity="center_horizontal"
             android:textSize="20sp"
-            android:layout_width="wrap_content"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"/>
 
-        <TextView
+        <Button
             android:id="@+id/name_user_parameters"
             android:text="Name"
             android:layout_gravity="center_horizontal"
             android:textSize="20sp"
-            android:layout_width="wrap_content"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"/>
 
-        <TextView
+        <Button
             android:id="@+id/label_color_user_parameters"
             android:text="Label Color"
             android:layout_gravity="center_horizontal"
             android:textSize="20sp"
-            android:layout_width="wrap_content"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"/>
 
-        <TextView
+        <Button
             android:id="@+id/dietary_restrictions_user_parameters"
             android:text="Dietary Restrictions"
             android:layout_gravity="center_horizontal"
             android:textSize="20sp"
-            android:layout_width="wrap_content"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"/>
 
-        <TextView
+        <Button
             android:id="@+id/user_type_user_parameters"
             android:text="User Type"
             android:layout_gravity="center_horizontal"
             android:textSize="20sp"
-            android:layout_width="wrap_content"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"/>
 
-        <TextView
+        <Button
             android:id="@+id/refrigerator_user_parameters"
             android:text="Refrigerator"
             android:layout_gravity="center_horizontal"
             android:textSize="20sp"
-            android:layout_width="wrap_content"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"/>
 
