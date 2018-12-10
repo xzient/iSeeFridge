@@ -18,6 +18,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:text="App Settings"
+
                 android:textSize="30sp" />
 
             <Space
@@ -29,7 +30,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Language"
-                android:background="@color/colorPrimary"
+                android:background="@drawable/rounded_corner_button"
                 android:layout_marginBottom="5dp"
                 />
 
@@ -42,7 +43,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Fonts and Font Size"
-                android:background="@color/colorPrimary"
+                android:background="@drawable/rounded_corner_button"
                 android:layout_marginBottom="5dp"/>
 
             <Space
@@ -54,7 +55,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="App Display Color"
-                android:background="@color/colorPrimary"
+                android:background="@drawable/rounded_corner_button"
                 android:layout_marginBottom="5dp"/>
 
             <Space
@@ -127,7 +128,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Alarms and Sounds"
-                android:background="@color/colorPrimary"
+                android:background="@drawable/rounded_corner_button"
                 android:layout_marginBottom="5dp"/>
 
             <Space
@@ -139,7 +140,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Notification Settings"
-                android:background="@color/colorPrimary"
+                android:background="@drawable/rounded_corner_button"
                 android:layout_marginBottom="5dp"/>
 
             <Space
@@ -159,7 +160,7 @@
                     android:layout_marginBottom="5dp"
                     android:layout_marginRight="3dp"
                     android:layout_weight="1"
-                    android:background="@color/colorPrimary"
+                    android:background="@drawable/rounded_corner_button"
                     android:text="Fridge Lighting" />
 
                 <Button
@@ -169,7 +170,7 @@
                     android:layout_marginBottom="5dp"
                     android:layout_marginLeft="3dp"
                     android:layout_weight="1"
-                    android:background="@color/colorPrimary"
+                    android:background="@drawable/rounded_corner_button"
                     android:text="Freezer Lighting" />
             </LinearLayout>
 
@@ -235,7 +236,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
-                android:background="@color/colorPrimary"
+                android:background="@drawable/rounded_corner_button"
                 android:text="Demo Mode" />
 
             <Space
@@ -247,7 +248,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:background="@color/colorAlert"
+                android:background="@drawable/rounded_corner_button_alert"
                 android:text="Erase All Data and Factory Reset" />
 
             <Space
