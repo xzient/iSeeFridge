@@ -19,11 +19,9 @@
                 android:text="Shopping List"
                 android:textSize="30sp" />
 
-            <View
-                android:id="@+id/divider"
+            <Space
                 android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:background="?android:attr/listDivider" />
+                android:layout_height="10dp" />
 
             <TextView
                 android:id="@+id/textView7"
@@ -31,11 +29,9 @@
                 android:layout_height="wrap_content"
                 android:text="Item                                        Amount                                  Bought?" />
 
-            <View
-                android:id="@+id/divider2"
+            <Space
                 android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:background="?android:attr/listDivider" />
+                android:layout_height="5dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -64,11 +60,9 @@
                     android:checked="true" />
             </LinearLayout>
 
-            <View
-                android:id="@+id/divider15"
+            <Space
                 android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:background="?android:attr/listDivider" />
+                android:layout_height="5dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -97,11 +91,9 @@
                     android:checked="false" />
             </LinearLayout>
 
-            <View
-                android:id="@+id/divider12"
+            <Space
                 android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:background="?android:attr/listDivider" />
+                android:layout_height="5dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -130,11 +122,9 @@
                     android:checked="false" />
             </LinearLayout>
 
-            <View
-                android:id="@+id/divider7"
+            <Space
                 android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:background="?android:attr/listDivider" />
+                android:layout_height="5dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -163,11 +153,9 @@
                     android:checked="false" />
             </LinearLayout>
 
-            <View
-                android:id="@+id/divider10"
+            <Space
                 android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:background="?android:attr/listDivider" />
+                android:layout_height="5dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -196,11 +184,9 @@
                     android:checked="true" />
             </LinearLayout>
 
-            <View
-                android:id="@+id/divider13"
+            <Space
                 android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:background="?android:attr/listDivider" />
+                android:layout_height="5dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -229,11 +215,9 @@
                     android:checked="true" />
             </LinearLayout>
 
-            <View
-                android:id="@+id/divider14"
+            <Space
                 android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:background="?android:attr/listDivider" />
+                android:layout_height="5dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -262,11 +246,9 @@
                     android:checked="true" />
             </LinearLayout>
 
-            <View
-                android:id="@+id/divider16"
+            <Space
                 android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:background="?android:attr/listDivider" />
+                android:layout_height="5dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -295,11 +277,9 @@
                     android:checked="true" />
             </LinearLayout>
 
-            <View
-                android:id="@+id/divider11"
+            <Space
                 android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:background="?android:attr/listDivider" />
+                android:layout_height="5dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -328,11 +308,9 @@
                     android:checked="true" />
             </LinearLayout>
 
-            <View
-                android:id="@+id/divider9"
+            <Space
                 android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:background="?android:attr/listDivider" />
+                android:layout_height="5dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -361,11 +339,9 @@
                     android:checked="false" />
             </LinearLayout>
 
-            <View
-                android:id="@+id/divider8"
+            <Space
                 android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:background="?android:attr/listDivider" />
+                android:layout_height="5dp" />
         </LinearLayout>
     </ScrollView>
 
