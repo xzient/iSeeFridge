@@ -20,6 +20,10 @@
                 android:text="App Settings"
                 android:textSize="30sp" />
 
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
             <Button
                 android:id="@+id/button3"
                 android:layout_width="match_parent"
@@ -29,6 +33,10 @@
                 android:layout_marginBottom="5dp"
                 />
 
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
             <Button
                 android:id="@+id/button4"
                 android:layout_width="match_parent"
@@ -36,6 +44,10 @@
                 android:text="Fonts and Font Size"
                 android:background="@color/colorPrimary"
                 android:layout_marginBottom="5dp"/>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
 
             <Button
                 android:id="@+id/button5"
@@ -45,19 +57,22 @@
                 android:background="@color/colorPrimary"
                 android:layout_marginBottom="5dp"/>
 
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
             <Switch
                 android:id="@+id/switch1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Night Mode" />
 
-            <View
-                android:id="@+id/divider6"
+            <Space
                 android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:background="?android:attr/listDivider" />
+                android:layout_height="10dp" />
 
             <LinearLayout
+                android:id="@+id/notifications_layout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
@@ -90,6 +105,10 @@
                 android:text="Fridge Settings"
                 android:textSize="30sp" />
 
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
             <Button
                 android:id="@+id/button7"
                 android:layout_width="match_parent"
@@ -97,6 +116,10 @@
                 android:text="Alarms and Sounds"
                 android:background="@color/colorPrimary"
                 android:layout_marginBottom="5dp"/>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
 
             <Button
                 android:id="@+id/button8"
@@ -106,7 +129,12 @@
                 android:background="@color/colorPrimary"
                 android:layout_marginBottom="5dp"/>
 
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
             <LinearLayout
+                android:id="@+id/lighting_buttons_layout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
@@ -115,30 +143,29 @@
                     android:id="@+id/button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Fridge Lighting"
-                    android:background="@color/colorPrimary"
                     android:layout_marginBottom="5dp"
-                    android:layout_marginRight="3dp"/>
+                    android:layout_marginRight="3dp"
+                    android:layout_weight="1"
+                    android:background="@color/colorPrimary"
+                    android:text="Fridge Lighting" />
 
                 <Button
                     android:id="@+id/button2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Freezer Lighting"
-                    android:background="@color/colorPrimary"
                     android:layout_marginBottom="5dp"
-                    android:layout_marginLeft="3dp"/>
+                    android:layout_marginLeft="3dp"
+                    android:layout_weight="1"
+                    android:background="@color/colorPrimary"
+                    android:text="Freezer Lighting" />
             </LinearLayout>
 
-            <View
-                android:id="@+id/divider5"
+            <Space
                 android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:background="?android:attr/listDivider" />
+                android:layout_height="10dp" />
 
             <LinearLayout
+                android:id="@+id/fridge_temp_layout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
@@ -159,13 +186,12 @@
                     android:progress="7" />
             </LinearLayout>
 
-            <View
-                android:id="@+id/divider3"
+            <Space
                 android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:background="?android:attr/listDivider" />
+                android:layout_height="10dp" />
 
             <LinearLayout
+                android:id="@+id/freezer_temp_layout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
@@ -187,6 +213,10 @@
 
             </LinearLayout>
 
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
+
             <Button
                 android:id="@+id/button9"
                 android:layout_width="match_parent"
@@ -194,6 +224,10 @@
                 android:text="Erase All Data and Factory Reset"
                 android:background="@color/colorPrimary"
                 android:layout_marginTop="5dp"/>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
 
         </LinearLayout>
     </ScrollView>
