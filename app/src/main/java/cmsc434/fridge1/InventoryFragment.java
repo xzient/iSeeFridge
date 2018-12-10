@@ -32,8 +32,8 @@ public class InventoryFragment extends Fragment {
 
         BottomNavigationView bottomNav = view.findViewById(R.id.bottom_navigation_inventory);
 
-        InventoryListAdapter adapter = new InventoryListAdapter(getActivity(), R.layout.inventory_adapter_view_layout, generalData.inventoryItems);
-        inventory.setAdapter(adapter);
+        generalData.inventoryListAdapter = new InventoryListAdapter(getActivity(), R.layout.inventory_adapter_view_layout, generalData.inventoryItems);
+        inventory.setAdapter(generalData.inventoryListAdapter);
 
 
         //Listener for bottom navigation bar
@@ -43,25 +43,15 @@ public class InventoryFragment extends Fragment {
                 FragmentTransaction fr = getFragmentManager().beginTransaction();
                 switch (item.getItemId()) {
                     case R.id.nav_inventory_edit:
-                        //fr.replace(R.id.fragment_container, new EditInventoryFragment()).addToBackStack(TAG).commit();
-                        inventory.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                            @Override
-                            public void onItemClick(AdapterView<?> adapterView, View view2, int i, long l) {
-                                generalData.currentInventoryLocation = i;
-                                generalData.currentInventory = generalData.inventoryItems.get(i).getNotes();
-
-                                FragmentTransaction ft = getFragmentManager().beginTransaction();
-                                ft.replace(R.id.fragment_container, new DisplayInventoryFragment()).addToBackStack(TAG).commit();
+                        fr.replace(R.id.fragment_container, new EditInventoryFragment()).addToBackStack(TAG).commit();
 
 
 
-                                return;
-                            }
-                        });
                         break;
 
                     case R.id.nav_inventory_add:
                         fr.replace(R.id.fragment_container, new AddToInventoryFragment()).addToBackStack(TAG).commit();
+                        inventory.setAdapter(generalData.inventoryListAdapter);
 
                         break;
 
@@ -69,7 +59,6 @@ public class InventoryFragment extends Fragment {
                         fr.replace(R.id.fragment_container, new MealsFragment()).addToBackStack(TAG).commit();
 
                         break;
-
 
                 }
                 return true;
@@ -79,5 +68,10 @@ public class InventoryFragment extends Fragment {
 
 
         return view;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
     }
 }

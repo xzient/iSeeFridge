@@ -12,9 +12,9 @@
         android:icon="@drawable/ic_cancel_white"
         android:title="Cancel" />
 
-    <item
+    <!--item
         android:id="@+id/nav_add_to_inventory_add_from_inventory"
         android:icon="@drawable/ic_inventory"
-        android:title="Add from Inventory" />
+        android:title="Add from Inventory" /-->
 
 </menu>
