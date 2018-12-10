@@ -23,7 +23,14 @@
             android:layout_height="wrap_content"
             android:textSize="22sp"
             android:textAlignment="center"
-            android:text="Your Fridge is currently at 40°F (4°C)"/>
+            android:text="Your Fridge is currently at 40°F (3°C)"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="22sp"
+            android:textAlignment="center"
+            android:text="Your Freezer is currently at 0°F (-18°C)"/>
 
         <TextView
             android:layout_width="match_parent"
