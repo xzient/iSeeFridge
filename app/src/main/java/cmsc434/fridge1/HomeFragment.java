@@ -18,6 +18,7 @@ public class HomeFragment extends Fragment {
     String items[];
     private static final String TAG = "HomeFragment";
     //NavigationView navigationView = getActivity().findViewById(R.id.nav_view);
+    GeneralData generalData = GeneralData.getSingleInstance();
 
     @Nullable
     @Override
@@ -29,14 +30,20 @@ public class HomeFragment extends Fragment {
 
 
         items = new String[] {
-                getString(R.string.nav_notes), getString(R.string.nav_inventory),
-                getString(R.string.nav_shopping_list), getString(R.string.nav_meals),
-                getString(R.string.nav_users), getString(R.string.nav_add_to_inventory),
-                getString(R.string.nav_user_parameters), getString(R.string.nav_settings)
+                "Christmas Shopping List", "12/04/18", "Anna's Birthday"
         };
+        ListView listView = view.findViewById(R.id.home_shopping_lists);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_expandable_list_item_1, items);
+        listView.setAdapter(adapter);
+
+        ListView listView2 = view.findViewById(R.id.home_alert_notes);
+        ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_expandable_list_item_1,
+                generalData.alerts);
+        listView2.setAdapter(adapter2);
 
 
 
+        /*
         ListView listView = view.findViewById(R.id.list_view_home);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_expandable_list_item_1, items);
         listView.setAdapter(adapter);
@@ -83,7 +90,7 @@ public class HomeFragment extends Fragment {
                         break;
                 }
             }
-        });
+        });*/
 
         return view;
     }

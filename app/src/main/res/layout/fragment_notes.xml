@@ -34,7 +34,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
-                    android:background="@color/colorAlert"
+                    android:background="@drawable/rounded_corner_button3"
                     />
 
 
@@ -68,7 +68,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
-                    android:background="#1d1d1d"
+                    android:background="@drawable/rounded_corner_button2"
                     />
 
             </LinearLayout>

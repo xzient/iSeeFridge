@@ -8,5 +8,5 @@
     <color name="transparent">#00000000</color>
     <color name="colorWhite">#FFF</color>
     <color name="colorBackground">#43525b</color>
-
+    <color name="colorForAlerts">#43525b</color>
 </resources>

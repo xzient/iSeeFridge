@@ -115,7 +115,7 @@
                 android:layout_gravity="center_horizontal"
 
 
-                android:background="@color/colorPrimary"/>
+                android:background="@drawable/rounded_corner_button4"/>
 
 
 
